@@ -1,0 +1,50 @@
+{
+  "name": "buddy-github-events",
+  "version": "0.0.1",
+  "description": "Check out your buddy's github events",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "webpack-dev-server --config config/webpack.dev.conf.js --mode=development --colors --watch --hot",
+    "build": "webpack --config config/webpack.prod.conf.js --mode=production --colors",
+    "lint": "eslint --ext .ts,.tsx,json .",
+    "lint:fix": "eslint --ext .ts,.tsx,json --fix .",
+    "clean": "rm -rf dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lawvs/buddy-github-events.git"
+  },
+  "author": "lawvs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lawvs/buddy-github-events/issues"
+  },
+  "homepage": "https://github.com/lawvs/buddy-github-events#readme",
+  "dependencies": {
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "styled-components": "^4.1.3"
+  },
+  "devDependencies": {
+    "@types/node": "^11.11.3",
+    "@types/react": "^16.8.7",
+    "@types/react-dom": "^16.8.2",
+    "@types/styled-components": "^4.1.12",
+    "@typescript-eslint/eslint-plugin": "^1.4.2",
+    "@typescript-eslint/parser": "^1.4.2",
+    "awesome-typescript-loader": "^5.2.1",
+    "clean-webpack-plugin": "^2.0.0",
+    "copy-webpack-plugin": "^5.0.1",
+    "eslint": "^5.15.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "html-webpack-plugin": "^3.2.0",
+    "prettier": "^1.16.4",
+    "typescript": "^3.3.3333",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.1",
+    "webpack-merge": "^4.2.1"
+  }
+}
