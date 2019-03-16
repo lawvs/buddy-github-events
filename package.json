@@ -4,8 +4,8 @@
   "description": "Check out your buddy's github events",
   "scripts": {
     "start": "npm run dev",
-    "dev": "webpack-dev-server --config config/webpack.dev.conf.js --mode=development --colors --watch --hot",
-    "build": "webpack --config config/webpack.prod.conf.js --mode=production --colors",
+    "dev": "webpack-dev-server --config scripts/webpack.dev.conf.js --mode=development --colors --watch --hot",
+    "build": "webpack --config scripts/webpack.prod.conf.js --mode=production --colors",
     "lint": "eslint --ext .ts,.tsx,json .",
     "lint:fix": "eslint --ext .ts,.tsx,json --fix .",
     "clean": "rm -rf dist",
@@ -43,6 +43,7 @@
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
     "html-webpack-plugin": "^3.2.0",
+    "html-webpack-template": "^6.2.0",
     "prettier": "^1.16.4",
     "typescript": "^3.3.3333",
     "webpack": "^4.29.6",

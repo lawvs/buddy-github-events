@@ -1,7 +1,7 @@
 const merge = require('webpack-merge')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const baseWebpackConfig = require('./webpack.base.conf')
+const { port } = require('./config')
 const { resolvePath } = require('./utils')
 
 /**
@@ -9,23 +9,16 @@ const { resolvePath } = require('./utils')
  */
 const webpackConfig = merge(baseWebpackConfig, {
   mode: 'development',
-  // https://webpack.js.org/configuration/devtool/
+  // @see https://webpack.js.org/configuration/devtool/
   devtool: 'cheap-module-eval-source-map',
   output: {
     publicPath: '/',
   },
-  plugins: [
-    // https://github.com/ampedandwired/html-webpack-plugin
-    new HtmlWebpackPlugin({
-      template: resolvePath('public/index.html'),
-      inject: true,
-    }),
-  ],
   devServer: {
-    port: 3000,
+    port,
     open: true,
     historyApiFallback: true,
-    contentBase: resolvePath('public'),
+    contentBase: resolvePath('public'), // static assets
   },
   performance: {
     hints: false,

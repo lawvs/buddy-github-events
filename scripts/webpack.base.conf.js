@@ -1,5 +1,8 @@
-const CopyWebpackPlugin = require('copy-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackTemplate = require('html-webpack-template')
+
 const { resolvePath } = require('./utils')
+const { templateConfig } = require('./config')
 
 /**
  * @type {import('webpack').Configuration}
@@ -31,12 +34,15 @@ module.exports = {
     ],
   },
   plugins: [
-    new CopyWebpackPlugin([
-      {
-        from: resolvePath('public'),
-        to: '[name].[ext]',
-        ignore: ['index.html'],
+    // @see https://github.com/ampedandwired/html-webpack-plugin
+    new HtmlWebpackPlugin({
+      inject: false,
+      template: HtmlWebpackTemplate,
+      ...templateConfig,
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
       },
-    ]),
+    }),
   ],
 }
