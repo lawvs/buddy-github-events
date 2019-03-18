@@ -1,4 +1,4 @@
-// https://developer.github.com/v3/users/
+// @see https://developer.github.com/v3/users/#get-a-single-user
 export interface GithubUser {
   login: string
   id: number
