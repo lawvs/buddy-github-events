@@ -1,4 +1,3 @@
-import { Dispatch } from 'redux'
 import { parse, ParsedEvent } from 'parse-github-event'
 
 import { fetchGithubProfileApi, fetchGithubEventsApi } from '../../api'
@@ -10,12 +9,10 @@ import {
   FETCH_EVENTS_SUCCESS,
   FETCH_EVENTS_FAILURE,
 } from './constants'
-import { FetchProfileActionTypes, FetchEventsActionTypes } from './types'
+import { AppThunkDispatch } from '../types'
 
 // Action Creators
-export const fetchProfile = (name: string) => async (
-  dispatch: Dispatch<FetchProfileActionTypes>,
-) => {
+export const fetchProfile = (name: string) => async (dispatch: AppThunkDispatch) => {
   dispatch({ type: FETCH_PROFILE_REQUESTED })
   try {
     const profileInfo = await fetchGithubProfileApi(name)
@@ -25,7 +22,7 @@ export const fetchProfile = (name: string) => async (
   }
 }
 
-export const fetchEvent = (name: string) => async (dispatch: Dispatch<FetchEventsActionTypes>) => {
+export const fetchEvent = (name: string) => async (dispatch: AppThunkDispatch) => {
   dispatch({ type: FETCH_EVENTS_REQUESTED })
   try {
     const githubEvents = await fetchGithubEventsApi(name)
