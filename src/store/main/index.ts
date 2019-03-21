@@ -7,11 +7,13 @@ import {
   FETCH_EVENTS_FAILURE,
 } from './constants'
 import { MainActionTypes, MainState } from './types'
+import { GithubEventsType } from '../../api'
 
 const initState: MainState = {
   error: null,
   loading: false,
   events: [],
+  eventType: GithubEventsType.EVENTS,
 }
 
 export default (state = initState, action: MainActionTypes): MainState => {

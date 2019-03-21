@@ -1,4 +1,4 @@
-import { fetchGithubProfileApi, fetchGithubEventsApi } from '../../api'
+import { fetchGithubProfileApi, fetchGithubEventsApi, GithubEventsType } from '../../api'
 import {
   FETCH_PROFILE_REQUESTED,
   FETCH_PROFILE_SUCCESS,
@@ -20,10 +20,12 @@ export const fetchProfile = (name: string) => async (dispatch: AppThunkDispatch)
   }
 }
 
-export const fetchEvent = (name: string) => async (dispatch: AppThunkDispatch) => {
+export const fetchEvent = (name: string, type: GithubEventsType) => async (
+  dispatch: AppThunkDispatch,
+) => {
   dispatch({ type: FETCH_EVENTS_REQUESTED })
   try {
-    const githubEvents = await fetchGithubEventsApi(name)
+    const githubEvents = await fetchGithubEventsApi(name, type)
     dispatch({
       type: FETCH_EVENTS_SUCCESS,
       payload: { events: githubEvents },
