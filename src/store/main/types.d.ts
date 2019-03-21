@@ -13,7 +13,7 @@ import { GithubEventsType } from '../../api'
 
 // main state
 export interface MainState {
-  readonly error: Error | null
+  readonly error?: string
   readonly loading: boolean
   readonly username?: string
   readonly eventType: GithubEventsType

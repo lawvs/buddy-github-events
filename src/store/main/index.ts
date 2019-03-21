@@ -10,7 +10,6 @@ import { MainActionTypes, MainState } from './types'
 import { GithubEventsType } from '../../api'
 
 const initState: MainState = {
-  error: null,
   loading: false,
   events: [],
   eventType: GithubEventsType.EVENTS,
@@ -37,7 +36,7 @@ export default (state = initState, action: MainActionTypes): MainState => {
       return {
         ...state,
         loading: true,
-        error: null,
+        error: undefined,
       }
     }
     case FETCH_EVENTS_SUCCESS: {
