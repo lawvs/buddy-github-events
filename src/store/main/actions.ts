@@ -1,5 +1,3 @@
-import { parse, ParsedEvent } from 'parse-github-event'
-
 import { fetchGithubProfileApi, fetchGithubEventsApi } from '../../api'
 import {
   FETCH_PROFILE_REQUESTED,
@@ -26,12 +24,9 @@ export const fetchEvent = (name: string) => async (dispatch: AppThunkDispatch) =
   dispatch({ type: FETCH_EVENTS_REQUESTED })
   try {
     const githubEvents = await fetchGithubEventsApi(name)
-    const githubEventsParsed = githubEvents
-      .map(parse)
-      .filter((e): e is ParsedEvent => e !== undefined)
     dispatch({
       type: FETCH_EVENTS_SUCCESS,
-      payload: { events: githubEventsParsed },
+      payload: { events: githubEvents },
     })
   } catch (error) {
     dispatch({ type: FETCH_EVENTS_FAILURE, error })

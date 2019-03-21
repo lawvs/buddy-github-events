@@ -1,3 +1,5 @@
+import { Event } from 'parse-github-event'
+
 import {
   FETCH_PROFILE_REQUESTED,
   FETCH_PROFILE_SUCCESS,
@@ -7,7 +9,6 @@ import {
   FETCH_EVENTS_FAILURE,
 } from './constants'
 import { GithubUser } from '../../api/types'
-import { ParsedEvent } from 'parse-github-event'
 
 // main state
 export interface MainState {
@@ -15,7 +16,7 @@ export interface MainState {
   readonly loading: boolean
   readonly username?: string
   readonly profileInfo?: GithubUser
-  readonly events?: ParsedEvent[]
+  readonly events: Event[]
 }
 
 // actions

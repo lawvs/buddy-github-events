@@ -11,6 +11,7 @@ import { MainActionTypes, MainState } from './types'
 const initState: MainState = {
   error: null,
   loading: false,
+  events: [],
 }
 
 export default (state = initState, action: MainActionTypes): MainState => {
