@@ -28,7 +28,7 @@ const EventItem = (event: Event) => {
         key={'repo'}
         href={`${GITHUB_DOMAIN}/${templateDate['repository']}`}
         target="_blank"
-        rel="noreferrer"
+        rel="noopener noreferrer"
       >
         {templateDate['repository']}
       </a>
@@ -36,7 +36,12 @@ const EventItem = (event: Event) => {
   }
   if (eventParsed.data.hasOwnProperty('member')) {
     templateDate['member'] = (
-      <a key={'member'} href={templateDate['member']['html_url']} target="_blank" rel="noreferrer">
+      <a
+        key={'member'}
+        href={templateDate['member']['html_url']}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         {templateDate['member']['login']}
       </a>
     )
@@ -44,7 +49,7 @@ const EventItem = (event: Event) => {
 
   const descriptArray: React.ReactNode[] = [
     <Fragment key={'login'}>
-      <a href={actorUrl} target="_blank" rel="noreferrer">
+      <a href={actorUrl} target="_blank" rel="noopener noreferrer">
         {login}
       </a>
       &nbsp;
@@ -64,7 +69,7 @@ const EventItem = (event: Event) => {
 
   return (
     <Wrapper>
-      <a href={actorUrl} target="_blank" rel="noreferrer">
+      <a href={actorUrl} target="_blank" rel="noopener noreferrer">
         <Avatar src={avatar_url} width={'32'} height={'32'} alt={`@${login}`} />
       </a>
       <Descript>{descriptArray}</Descript>
