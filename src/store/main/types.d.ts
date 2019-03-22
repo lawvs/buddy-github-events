@@ -7,6 +7,8 @@ import {
   FETCH_EVENTS_REQUESTED,
   FETCH_EVENTS_SUCCESS,
   FETCH_EVENTS_FAILURE,
+  CHANGE_NAME,
+  CHANGE_EVENT_TYPE,
 } from './constants'
 import { GithubUser } from '../../api/types'
 import { GithubEventsType } from '../../api'
@@ -64,4 +66,22 @@ export type FetchEventsActionTypes =
   | FetchEventsSuccessAction
   | FetchEventsFailureAction
 
-export type MainActionTypes = FetchProfileActionTypes | FetchEventsActionTypes
+export interface ChangeNameType {
+  type: typeof CHANGE_NAME
+  payload: {
+    username: string
+  }
+}
+
+export interface ChangeEventTypeType {
+  type: typeof CHANGE_EVENT_TYPE
+  payload: {
+    eventType: GithubEventsType
+  }
+}
+
+export type MainActionTypes =
+  | FetchProfileActionTypes
+  | FetchEventsActionTypes
+  | ChangeNameType
+  | ChangeEventTypeType

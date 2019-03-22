@@ -1,4 +1,4 @@
-import { fetchGithubProfileApi, fetchGithubEventsApi } from '../../api'
+import { fetchGithubProfileApi, fetchGithubEventsApi, GithubEventsType } from '../../api'
 import {
   FETCH_PROFILE_REQUESTED,
   FETCH_PROFILE_SUCCESS,
@@ -6,6 +6,8 @@ import {
   FETCH_EVENTS_REQUESTED,
   FETCH_EVENTS_SUCCESS,
   FETCH_EVENTS_FAILURE,
+  CHANGE_NAME,
+  CHANGE_EVENT_TYPE,
 } from './constants'
 import { AppThunkDispatch, GlobalState } from '../types'
 
@@ -51,3 +53,17 @@ export const fetchEvent = () => async (dispatch: AppThunkDispatch, getState: () 
     dispatch({ type: FETCH_EVENTS_FAILURE, error: error.message })
   }
 }
+
+export const changeName = (username: string) => ({
+  type: CHANGE_NAME,
+  payload: {
+    username,
+  },
+})
+
+export const changeEventType = (eventType: GithubEventsType) => ({
+  type: CHANGE_EVENT_TYPE,
+  payload: {
+    eventType,
+  },
+})

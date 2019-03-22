@@ -5,6 +5,8 @@ import {
   FETCH_EVENTS_REQUESTED,
   FETCH_EVENTS_SUCCESS,
   FETCH_EVENTS_FAILURE,
+  CHANGE_NAME,
+  CHANGE_EVENT_TYPE,
 } from './constants'
 import { MainActionTypes, MainState } from './types'
 import { GithubEventsType } from '../../api'
@@ -55,6 +57,24 @@ export default (state = initState, action: MainActionTypes): MainState => {
         ...state,
         error,
         loading: false,
+      }
+    }
+    case CHANGE_NAME: {
+      const {
+        payload: { username },
+      } = action
+      return {
+        ...state,
+        username,
+      }
+    }
+    case CHANGE_EVENT_TYPE: {
+      const {
+        payload: { eventType },
+      } = action
+      return {
+        ...state,
+        eventType,
       }
     }
     default:
