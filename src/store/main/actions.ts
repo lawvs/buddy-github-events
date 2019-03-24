@@ -10,6 +10,7 @@ import {
   CHANGE_EVENT_TYPE,
 } from './constants'
 import { AppThunkDispatch, GlobalState } from '../types'
+import { ChangeNameType, ChangeEventTypeType } from './types'
 
 // Action Creators
 export const fetchProfile = () => async (
@@ -54,14 +55,14 @@ export const fetchEvent = () => async (dispatch: AppThunkDispatch, getState: () 
   }
 }
 
-export const changeName = (username: string) => ({
+export const changeName = (username: string): ChangeNameType => ({
   type: CHANGE_NAME,
   payload: {
     username,
   },
 })
 
-export const changeEventType = (eventType: GithubEventsType) => ({
+export const changeEventType = (eventType: GithubEventsType): ChangeEventTypeType => ({
   type: CHANGE_EVENT_TYPE,
   payload: {
     eventType,

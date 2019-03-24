@@ -13,6 +13,7 @@ import { GithubEventsType } from '../../api'
 
 const initState: MainState = {
   loading: false,
+  username: '',
   events: [],
   eventType: GithubEventsType.EVENTS,
 }
@@ -20,7 +21,10 @@ const initState: MainState = {
 export default (state = initState, action: MainActionTypes): MainState => {
   switch (action.type) {
     case FETCH_PROFILE_REQUESTED: {
-      return state
+      return {
+        profileInfo: undefined,
+        ...state,
+      }
     }
     case FETCH_PROFILE_SUCCESS: {
       const {
@@ -38,6 +42,7 @@ export default (state = initState, action: MainActionTypes): MainState => {
       return {
         ...state,
         loading: true,
+        events: [],
         error: undefined,
       }
     }
