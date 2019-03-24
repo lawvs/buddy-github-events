@@ -26,12 +26,13 @@ const ProfileWrapper = styled.aside`
     padding: 8px;
     margin: 0;
   }
+
   h5 {
     margin: 8px;
   }
 `
 
-const Profile = (profileInfo?: GithubUser) =>
+const Profile = ({ profileInfo }: { profileInfo?: GithubUser }) =>
   profileInfo ? (
     <ProfileWrapper>
       <img src={profileInfo.avatar_url} width={'100%'} />

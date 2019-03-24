@@ -22,8 +22,8 @@ export default (state = initState, action: MainActionTypes): MainState => {
   switch (action.type) {
     case FETCH_PROFILE_REQUESTED: {
       return {
-        profileInfo: undefined,
         ...state,
+        profileInfo: undefined,
       }
     }
     case FETCH_PROFILE_SUCCESS: {
