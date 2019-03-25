@@ -14,6 +14,7 @@ export const Avatar = styled.img`
 
 export const Descript = styled.p`
   margin: 8px;
+  font-size: 16px;
 
   a {
     color: #24292e;

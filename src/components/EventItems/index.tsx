@@ -82,11 +82,11 @@ export interface EventItemsProps {
 }
 
 const EventItems = ({ events }: EventItemsProps) => (
-  <>
+  <div>
     {events.map(event => (
       <EventItem key={event.id} {...event} />
     ))}
-  </>
+  </div>
 )
 
 export default EventItems

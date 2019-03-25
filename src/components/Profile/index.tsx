@@ -12,6 +12,10 @@ const ProfileWrapper = styled.aside`
   border: 1px solid #d1d5da;
   ${() => spLayout(`display: none;`)}
 
+  img {
+    user-drag: none;
+  }
+
   a {
     color: #24292e;
     text-decoration: none;
@@ -28,6 +32,7 @@ const ProfileWrapper = styled.aside`
   }
 
   h5 {
+    font-size: 16px;
     margin: 8px;
   }
 `
