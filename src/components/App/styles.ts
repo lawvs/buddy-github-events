@@ -32,10 +32,22 @@ export const PlaceHolder = styled.aside`
 
 export const FooterWrapper = styled.footer`
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  padding-top: 40px;
-  padding-bottom: 30px;
+  padding: 30px 0;
   color: #5f5f5f;
   overflow: hidden;
+  background: #20232a;
+  color: hsla(0, 0%, 100%, 0.6);
+
+  a {
+    font-weight: 600;
+    color: hsla(0, 0%, 100%, 0.6);
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #0366d6;
+  }
 `
