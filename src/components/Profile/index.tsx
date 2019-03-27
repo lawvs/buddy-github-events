@@ -10,7 +10,9 @@ const ProfileWrapper = styled.aside`
   flex-direction: column;
   align-items: center;
   border: 1px solid #d1d5da;
-  ${() => spLayout(`display: none;`)}
+  ${spLayout(`
+    display: none;
+  `)}
 
   img {
     user-drag: none;

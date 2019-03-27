@@ -12,7 +12,10 @@ const TagWrapper = styled.span<TagProps>`
   padding: 2px 6px;
   white-space: nowrap;
   cursor: pointer;
-  ${({ round = false }) => `border-radius: ${round ? '30px' : '3px'};`}
+  user-select: none;
+  ${({ round = false }) => `
+    border-radius: ${round ? '30px' : '3px'};
+  `}
 
   background-color: #5c7080;
   &:hover {

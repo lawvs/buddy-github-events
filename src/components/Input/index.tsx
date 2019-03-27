@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { withTranslation, WithTranslation } from 'react-i18next'
 
 import { GithubEventsType } from '../../api'
 import { GithubUser } from '../../api/types'
@@ -20,8 +21,6 @@ const InputWrapper = styled.div<{ round?: boolean }>`
 
   &:focus-within {
     background-color: hsla(0, 0%, 100%, 1);
-    box-shadow: 0 0 0 1px #137cbd, 0 0 0 3px rgba(19, 124, 189, 0.3),
-      inset 0 1px 1px rgba(16, 22, 26, 0.2);
   }
 
   ${({ round = false }) => `border-radius: ${round ? '30px' : '6px'};`}
@@ -52,7 +51,8 @@ const Input = ({
   fetchProfile,
   fetchEvent,
   changeEventType,
-}: InputProps) => {
+  t,
+}: InputProps & WithTranslation) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     changeName(e.currentTarget.value.trim())
   }
@@ -79,10 +79,10 @@ const Input = ({
         onKeyPress={handleKeyPress}
       />
       <Tag round onClick={handleTagClick}>
-        {eventType === GithubEventsType.EVENTS ? 'broadcast event' : 'received event'}
+        {eventType === GithubEventsType.EVENTS ? t('broadcast event') : t('received event')}
       </Tag>
     </InputWrapper>
   )
 }
 
-export default Input
+export default withTranslation()(Input)
