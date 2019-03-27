@@ -3,9 +3,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { spLayout } from '../Layout'
-import { HOMEPAGE } from '../../constants'
-
-const SIZE = 60
 
 const Wrapper = styled.div`
   position: absolute;
@@ -46,12 +43,12 @@ const Wrapper = styled.div`
   }
 `
 
-const GithubCorner = () => (
+const GithubCorner = ({ href, size }: { href: string; size: number }) => (
   <Wrapper>
-    <a href={HOMEPAGE} className="github-corner" aria-label="View source on GitHub">
+    <a href={href} className="github-corner" aria-label="View source on GitHub">
       <svg
-        width={SIZE}
-        height={SIZE}
+        width={size}
+        height={size}
         viewBox="0 0 250 250"
         style={{
           fill: '#fff',

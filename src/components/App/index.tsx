@@ -32,7 +32,7 @@ const App = () => (
   <AppWrapper>
     <Header>
       <Input />
-      <GithubCorner />
+      <GithubCorner href={HOMEPAGE} size={60} />
     </Header>
     <Main>
       <Profile />

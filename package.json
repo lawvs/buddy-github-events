@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/lawvs/buddy-github-events/issues"
   },
-  "homepage": "https://github.com/lawvs/buddy-github-events#readme",
+  "homepage": "https://github.com/lawvs/buddy-github-events",
   "dependencies": {
     "i18next": "^15.0.7",
     "parse-github-event": "^1.0.2",
