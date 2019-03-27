@@ -6,9 +6,10 @@ import { AppThunkDispatch, GlobalState, StateProperties, ActionProperties } from
 import { GithubEventsType } from '../api'
 
 const mapStateToProps = ({
-  mainState: { username, profileInfo },
+  mainState: { username, eventType, profileInfo },
 }: GlobalState): StateProperties<InputProps> => ({
   username,
+  eventType,
   profileInfo,
 })
 
