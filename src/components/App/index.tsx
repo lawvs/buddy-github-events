@@ -5,7 +5,7 @@ import EventItems from '../../service/EventItem'
 import Input from '../../service/Input'
 import Profile from '../../service/Profile'
 import GithubCorner from './GitHubCorner'
-import { HOMEPAGE, AUTHOR, AUTHOR_GITHUB_URL } from '../../constants'
+import { HOMEPAGE, AUTHOR, AUTHOR_GITHUB_URL, LICENSE_URL, LICENSE } from '../../constants'
 
 const Footer = () => (
   <FooterWrapper>
@@ -14,8 +14,8 @@ const Footer = () => (
     </a>
     <section>
       Released under the{' '}
-      <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener noreferrer">
-        MIT License
+      <a href={LICENSE_URL} target="_blank" rel="noopener noreferrer">
+        {LICENSE} License
       </a>
     </section>
     <section>
