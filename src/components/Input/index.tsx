@@ -26,6 +26,7 @@ const InputWrapper = styled.div<{ round?: boolean }>`
   ${({ round = false }) => `border-radius: ${round ? '30px' : '6px'};`}
 
   input {
+    flex: 1;
     font-size: 16px;
     outline: none;
     border: none;
@@ -78,9 +79,13 @@ const Input = ({
         onChange={handleChange}
         onKeyPress={handleKeyPress}
       />
-      <Tag round onClick={handleTagClick}>
-        {eventType === GithubEventsType.EVENTS ? t('broadcast event') : t('received event')}
-      </Tag>
+      {profileInfo &&
+      username === profileInfo.login &&
+      profileInfo.type === 'Organization' ? null : (
+        <Tag round onClick={handleTagClick}>
+          {eventType === GithubEventsType.EVENTS ? t('broadcast event') : t('received event')}
+        </Tag>
+      )}
     </InputWrapper>
   )
 }
