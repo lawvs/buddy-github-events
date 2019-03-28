@@ -4,7 +4,7 @@ import { FooterWrapper, AppWrapper, Header, Main, PlaceHolder } from './styles'
 import EventItems from '../../service/EventItem'
 import Input from '../../service/Input'
 import Profile from '../../service/Profile'
-import GithubCorner from './GitHubCorner'
+import GithubCorner from '../GitHubCorner'
 import { HOMEPAGE, AUTHOR, AUTHOR_GITHUB_URL, LICENSE_URL, LICENSE } from '../../constants'
 
 const Footer = () => (

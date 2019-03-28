@@ -10,13 +10,13 @@ const ProfileWrapper = styled.aside`
   flex-direction: column;
   align-items: center;
   border: 1px solid #d1d5da;
+  overflow: hidden;
   ${spLayout(`
     display: none;
   `)}
 
-  img {
-    user-drag: none;
-  }
+  box-shadow: 10px 8px 0px #ccc;
+  border-radius: 10px;
 
   a {
     color: #24292e;

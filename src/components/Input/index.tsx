@@ -11,7 +11,7 @@ const InputWrapper = styled.div<{ round?: boolean }>`
   justify-content: space-between;
   align-items: center;
   height: 30px;
-  width: 300px;
+  min-width: 300px;
   padding: 0 12px;
   margin: 16px;
 

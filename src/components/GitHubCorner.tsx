@@ -2,7 +2,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { spLayout } from '../Layout'
+import { spLayout } from './Layout'
 
 const Wrapper = styled.div`
   position: absolute;

@@ -35,7 +35,7 @@ export const FooterWrapper = styled.footer`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 30px 0;
+  padding: 16px 0;
   color: #5f5f5f;
   overflow: hidden;
   background: #20232a;
