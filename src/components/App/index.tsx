@@ -6,6 +6,7 @@ import Input from '../../service/Input'
 import Profile from '../../service/Profile'
 import GithubCorner from '../GitHubCorner'
 import { HOMEPAGE, AUTHOR, AUTHOR_GITHUB_URL, LICENSE_URL, LICENSE } from '../../constants'
+import Loading from '../../service/Loading'
 
 const Footer = () => (
   <FooterWrapper>
@@ -36,7 +37,10 @@ const App = () => (
     </Header>
     <Main>
       <Profile />
-      <EventItems />
+      <article>
+        <Loading />
+        <EventItems />
+      </article>
       <PlaceHolder />
     </Main>
     <Footer />
