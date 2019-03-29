@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import { GithubUser } from '../../api/types'
@@ -39,8 +39,18 @@ const ProfileWrapper = styled.aside`
   }
 `
 
-const Profile = ({ profileInfo }: { profileInfo?: GithubUser }) =>
-  profileInfo ? (
+const Profile = ({ profileInfo }: { profileInfo?: GithubUser }) => {
+  const [loadedName, setLoadedName] = useState<string>()
+  if (!profileInfo) {
+    return <div />
+  }
+  const preloadImg = new Image()
+  preloadImg.onload = () => setLoadedName(profileInfo.login)
+  preloadImg.src = profileInfo.avatar_url
+  if (loadedName !== profileInfo.login) {
+    return <div /> // loading
+  }
+  return (
     <ProfileWrapper>
       <img src={profileInfo.avatar_url} width={'100%'} />
       <h5>
@@ -50,6 +60,7 @@ const Profile = ({ profileInfo }: { profileInfo?: GithubUser }) =>
       </h5>
       <p>{profileInfo.bio}</p>
     </ProfileWrapper>
-  ) : null
+  )
+}
 
 export default Profile
