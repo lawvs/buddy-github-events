@@ -22,7 +22,7 @@ const Spinner = styled.div`
 `
 const LoadingCard = styled.div`
   display: flex;
-  width: 300px;
+  flex: 1;
   flex-direction: column;
   justify-content: center;
   align-items: center;

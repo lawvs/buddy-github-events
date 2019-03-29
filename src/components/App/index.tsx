@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { FooterWrapper, AppWrapper, Header, Main, PlaceHolder } from './styles'
+import { FooterWrapper, AppWrapper, Header, Main, PlaceHolder, Center } from './styles'
 import EventItems from '../../service/EventItem'
 import Input from '../../service/Input'
 import Profile from '../../service/Profile'
@@ -37,10 +37,10 @@ const App = () => (
     </Header>
     <Main>
       <Profile />
-      <article>
+      <Center>
         <Loading />
         <EventItems />
-      </article>
+      </Center>
       <PlaceHolder />
     </Main>
     <Footer />

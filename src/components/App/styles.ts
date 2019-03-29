@@ -21,9 +21,15 @@ export const Main = styled.main`
   display: flex;
   flex: 1;
   align-items: flex-start;
-  justify-content: space-around;
+  justify-content: space-evenly;
   width: 100%;
   margin: 10px;
+`
+
+export const Center = styled.article`
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 500px;
 `
 
 export const PlaceHolder = styled.aside`
