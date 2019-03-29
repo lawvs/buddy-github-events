@@ -10,6 +10,7 @@ import configureStore from './store'
 import i18n from './i18n'
 import { fetchProfile, fetchEvent, changeName } from './store/main/actions'
 import { GlobalStyle } from './styles'
+import { checkParam } from './utils'
 
 const store = configureStore()
 
@@ -25,13 +26,4 @@ render(
   document.querySelector('#root'),
 )
 
-// check url param
-const url = new URL(window.location.href)
-const name = url.searchParams.get('name')
-if (name) {
-  store.dispatch(changeName(name))
-  store.dispatch(fetchEvent())
-  store.dispatch(fetchProfile())
-  url.searchParams.delete('name')
-  window.history.pushState('', document.title, url.href)
-}
+checkParam(store)
