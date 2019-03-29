@@ -20,7 +20,7 @@ export interface MainState {
   readonly username: string
   readonly eventType: GithubEventsType
   readonly profileInfo?: GithubUser
-  readonly events: Event[]
+  readonly events?: Event[]
 }
 
 // actions

@@ -14,7 +14,6 @@ import { GithubEventsType } from '../../api'
 const initState: MainState = {
   loading: false,
   username: '',
-  events: [],
   eventType: GithubEventsType.EVENTS,
 }
 
@@ -42,7 +41,7 @@ export default (state = initState, action: MainActionTypes): MainState => {
       return {
         ...state,
         loading: true,
-        events: [],
+        events: undefined,
         error: undefined,
       }
     }

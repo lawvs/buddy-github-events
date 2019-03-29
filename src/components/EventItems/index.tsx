@@ -78,15 +78,16 @@ const EventItem = (event: Event) => {
 }
 
 export interface EventItemsProps {
-  events: Event[]
+  events?: Event[]
 }
 
-const EventItems = ({ events }: EventItemsProps) => (
-  <div>
-    {events.map(event => (
-      <EventItem key={event.id} {...event} />
-    ))}
-  </div>
-)
+const EventItems = ({ events }: EventItemsProps) =>
+  events ? (
+    <div>
+      {events.map(event => (
+        <EventItem key={event.id} {...event} />
+      ))}
+    </div>
+  ) : null
 
 export default EventItems
