@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export enum CARD_INTENT {
+export enum INTENTS {
   DEFAULT = '#d1d5da',
   PRIMARY = '#48AFF0',
   SUCCESS = '#3DCC91',
@@ -8,7 +8,7 @@ export enum CARD_INTENT {
   DANGER = '#FF7373',
 }
 
-const Card = styled.div<{ intent?: CARD_INTENT } & React.HTMLProps<HTMLDivElement>>`
+const Card = styled.div<{ intent?: INTENTS } & React.HTMLProps<HTMLDivElement>>`
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -17,7 +17,7 @@ const Card = styled.div<{ intent?: CARD_INTENT } & React.HTMLProps<HTMLDivElemen
   height: 100px;
   border-radius: 10px;
   font-size: 16px;
-  background-color: ${({ intent = CARD_INTENT.DEFAULT }) => intent};
+  background-color: ${({ intent = INTENTS.DEFAULT }) => intent};
 `
 
 export default Card

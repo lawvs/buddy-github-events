@@ -8,6 +8,7 @@ import Loading from '../../service/Loading'
 import Footer from '../Footer'
 import { HOMEPAGE } from '../../constants'
 import { AppWrapper, Header, Main, PlaceHolder, Center } from './styles'
+import ErrorCard from '../../service/ErrorCard'
 
 const App = () => (
   <AppWrapper>
@@ -18,6 +19,7 @@ const App = () => (
     <Main>
       <Profile />
       <Center>
+        <ErrorCard />
         <Loading />
         <EventItems />
       </Center>
