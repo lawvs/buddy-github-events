@@ -2,6 +2,8 @@ import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import { WithTranslation, withTranslation } from 'react-i18next'
 
+import Card from '../Card'
+
 const flash = keyframes`
   0% { opacity: 1; }
   90% { opacity: 0; }
@@ -20,16 +22,6 @@ const Spinner = styled.div`
   background-color: #607d8b;
   animation: ${flash} 1.5s ease infinite, ${blowUp} 1.5s ease infinite;
 `
-const LoadingCard = styled.div`
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-  border-radius: 10px;
-  border: 1px solid #d1d5da;
-`
 
 export interface LoadingProps {
   loading: boolean
@@ -37,10 +29,10 @@ export interface LoadingProps {
 
 const Loading = ({ loading, t }: LoadingProps & WithTranslation) =>
   loading ? (
-    <LoadingCard>
+    <Card>
       <Spinner />
       <p>{t('Loading')}</p>
-    </LoadingCard>
+    </Card>
   ) : null
 
 export default withTranslation()(Loading)
