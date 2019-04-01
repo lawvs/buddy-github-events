@@ -1,8 +1,13 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 import { GithubUser } from '../../api/types'
 import { spLayout } from '../Layout'
+
+const fadein = keyframes`
+  from { opacity: 0; }
+  to   { opacity: 1; }
+`
 
 const ProfileWrapper = styled.aside`
   max-width: 230px;
@@ -11,6 +16,8 @@ const ProfileWrapper = styled.aside`
   align-items: center;
   border: 1px solid #d1d5da;
   overflow: hidden;
+  opacity: 0;
+  animation: ${fadein} 0.5s ease 0s forwards;
   ${spLayout(`
     display: none;
   `)}

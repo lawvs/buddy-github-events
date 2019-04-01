@@ -1,5 +1,7 @@
 import styled from 'styled-components'
+
 import { spLayout } from '../Layout'
+import { easeInOutBack } from '../easing'
 
 export const HeaderWrapper = styled.header`
   display: flex;
@@ -9,19 +11,24 @@ export const HeaderWrapper = styled.header`
   background-color: #24292e;
   color: #dddddd;
   flex-wrap: wrap;
+  min-height: 50px;
+  transition: all 0.3s ${easeInOutBack};
+
   h1 {
     font-weight: normal;
     margin: 0 20px;
+    transition: all 0.3s ${easeInOutBack};
   }
   p {
     display: none;
     font-weight: lighter;
+    transition: all 0.3s ${easeInOutBack};
   }
 
   &[data-is-expand='true'] {
     justify-content: center;
     flex-direction: column;
-    height: 70vh;
+    height: 60vh;
     min-height: 300px;
     h1 {
       font-size: 60px;
