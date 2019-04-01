@@ -10,13 +10,6 @@ export const AppWrapper = styled.div`
   align-items: center;
 `
 
-export const Header = styled.header`
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  background-color: #24292e;
-`
-
 export const Main = styled.main`
   display: flex;
   flex: 1;
