@@ -74,6 +74,7 @@ const Input = ({
   return (
     <InputWrapper round>
       <input
+        placeholder={t('Github username')}
         type="search"
         value={username || ''}
         onChange={handleChange}
