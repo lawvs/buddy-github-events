@@ -23,7 +23,7 @@ module.exports = {
   rules: {
     // semi: ['error', 'never'],
     // 'comma-dangle': ['error', 'always-multiline'],
-    '@typescript-eslint/indent': ['error', 2],
+    '@typescript-eslint/indent': 0,
     '@typescript-eslint/camelcase': 0,
     '@typescript-eslint/member-delimiter-style': ['error', { multiline: { delimiter: 'none' } }],
     '@typescript-eslint/explicit-function-return-type': 0,
