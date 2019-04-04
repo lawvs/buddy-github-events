@@ -1,4 +1,10 @@
 {
   "Language": "语言",
-  "GitHub": "GitHub"
+  "broadcast event": "广播的事件",
+  "received event": "接收的事件",
+  "Loading": "正在加载...",
+  "PROJECT_NAME": "Buddy's Github Events",
+  "PROJECT_DESCRIPTION": "偷看大佬们的 GitHub 动态",
+  "Github username": "$t(GitHub) 用户名",
+  "GitHub": "Github"
 }

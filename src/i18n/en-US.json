@@ -1,4 +1,10 @@
 {
   "Language": "Language",
-  "GitHub": "GitHub"
+  "broadcast event": "broadcast event",
+  "received event": "received event",
+  "Loading": "Loading activity...",
+  "PROJECT_NAME": "Buddy's Github Events",
+  "PROJECT_DESCRIPTION": "Check out your buddy's github activities",
+  "Github username": "$t(GitHub) username",
+  "GitHub": "Github"
 }

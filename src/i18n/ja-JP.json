@@ -1,4 +1,10 @@
 {
   "Language": "言語",
-  "GitHub": "GitHub"
+  "broadcast event": "放送した活動",
+  "received event": "受け取った活動",
+  "Loading": "ロード中...",
+  "PROJECT_NAME": "Buddy's Github Events",
+  "PROJECT_DESCRIPTION": "友達のGitHubアクティビティを見る",
+  "Github username": "$t(GitHub) ユーザー名",
+  "GitHub": "Github"
 }
