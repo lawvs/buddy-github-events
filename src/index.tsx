@@ -8,7 +8,8 @@ import { I18nextProvider } from 'react-i18next'
 import App from './components/App'
 import configureStore from './store'
 import i18n from './i18n'
-import { fetchProfile, fetchEvent, changeName } from './store/main/actions'
+import EasterEggs from './components/EasterEggs'
+import { AUTHOR, HOMEPAGE } from './constants'
 import { GlobalStyle } from './styles'
 import { checkParam } from './utils'
 
@@ -27,3 +28,4 @@ render(
 )
 
 checkParam(store)
+EasterEggs({ author: AUTHOR, homepage: HOMEPAGE })
