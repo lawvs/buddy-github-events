@@ -84,9 +84,11 @@ export interface EventItemsProps {
 const EventItems = ({ events }: EventItemsProps) =>
   events ? (
     <div>
-      {events.map(event => (
-        <EventItem key={event.id} {...event} />
-      ))}
+      {events
+        .filter((e, index, self) => index === self.findIndex(t => t.id === e.id)) // remove id duplicates
+        .map(event => (
+          <EventItem key={event.id} {...event} />
+        ))}
     </div>
   ) : null
 
