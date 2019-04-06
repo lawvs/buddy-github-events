@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import { Event, parse } from 'parse-github-event'
+import TimeAgo from 'react-timeago'
 
 import { Wrapper, Avatar, Descript } from './styled'
 
@@ -73,6 +74,7 @@ const EventItem = (event: Event) => {
         <Avatar src={avatar_url} width={'32'} height={'32'} alt={`@${login}`} />
       </a>
       <Descript>{descriptArray}</Descript>
+      <TimeAgo date={new Date(event.created_at)} />
     </Wrapper>
   )
 }

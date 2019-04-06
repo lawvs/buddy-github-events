@@ -22,7 +22,8 @@ export const Main = styled.main`
 export const Center = styled.article`
   display: flex;
   flex-direction: column;
-  flex: 0 1 500px;
+  min-width: 500px;
+  flex: 0 1 auto;
 `
 
 export const PlaceHolder = styled.aside`

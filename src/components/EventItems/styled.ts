@@ -2,9 +2,15 @@ import styled from 'styled-components'
 
 export const Wrapper = styled.div`
   display: flex;
+  align-items: center;
   padding: 8px 0px;
   margin: 8px 16px;
   border-bottom: 1px solid #e1e4e8;
+
+  time {
+    font-size: 12px;
+    color: #6a737d;
+  }
 `
 
 export const Avatar = styled.img`
