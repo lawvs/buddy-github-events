@@ -28,6 +28,7 @@ export const HeaderWrapper = styled.header`
   &[data-is-expand='true'] {
     justify-content: center;
     flex-direction: column;
+    flex-wrap: nowrap;
     height: 60vh;
     min-height: 300px;
     h1 {

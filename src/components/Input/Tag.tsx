@@ -17,10 +17,11 @@ const TagWrapper = styled.span<TagProps>`
     border-radius: ${round ? '30px' : '3px'};
   `}
 
-  background-color: #5c7080;
+  color: #ddd;
+  background-color: #182026;
   &:hover {
-    color: #ddd;
-    background-color: #182026;
+    color: #182026;
+    background-color: #bfccd6;
   }
 `
 
