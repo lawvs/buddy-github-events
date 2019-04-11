@@ -7,6 +7,7 @@
 - Input **GitHub Login Name** or **Organizations Name** in input box
 - Click lable next to the input box to switch github events type
 - Click `Search`
+- Example: [Recent activity by Google Organization](https://lawvs.github.io/buddy-github-events/?name=google)
 
 ## References
 
