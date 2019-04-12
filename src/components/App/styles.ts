@@ -27,5 +27,7 @@ export const Center = styled.article`
 `
 
 export const PlaceHolder = styled.aside`
-  ${() => spLayout(`display: none;`)}
+  ${spLayout(`
+    display: none;
+  `)}
 `
