@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly EventItems DeleteEvent should renders correctly 1`] = `
+<div>
+  <div
+    className="sc-bdVaJa dvjgOn"
+  >
+    <a
+      href="https://github.com/GITHUB_USERNAME"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <img
+        alt="@GITHUB_USERNAME"
+        className="sc-bwzfXH hLcALu"
+        height="32"
+        src="https://avatars.githubusercontent.com/u/11111?"
+        width="32"
+      />
+    </a>
+    <p
+      className="sc-htpNat pFQla"
+    >
+      <a
+        href="https://github.com/GITHUB_USERNAME"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        GITHUB_USERNAME
+      </a>
+       
+      deleted branch 
+      fix
+       at 
+      <a
+        href="https://github.com/GITHUB_USERNAME/PROJECT_NAME_2"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        GITHUB_USERNAME/PROJECT_NAME_2
+      </a>
+    </p>
+    <time
+      dateTime="2019-01-01T00:00:00.000Z"
+      title="2019-01-01 00:00"
+    >
+      0 seconds from now
+    </time>
+  </div>
+  <div
+    className="sc-bdVaJa dvjgOn"
+  >
+    <a
+      href="https://github.com/GITHUB_USERNAME"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <img
+        alt="@GITHUB_USERNAME"
+        className="sc-bwzfXH hLcALu"
+        height="32"
+        src="https://avatars.githubusercontent.com/u/11111?"
+        width="32"
+      />
+    </a>
+    <p
+      className="sc-htpNat pFQla"
+    >
+      <a
+        href="https://github.com/GITHUB_USERNAME"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        GITHUB_USERNAME
+      </a>
+       
+      deleted tag 
+      v1.0.0
+       at 
+      <a
+        href="https://github.com/GITHUB_USERNAME/PROJECT_NAME_1"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        GITHUB_USERNAME/PROJECT_NAME_1
+      </a>
+    </p>
+    <time
+      dateTime="2019-01-01T00:00:00.000Z"
+      title="2019-01-01 00:00"
+    >
+      0 seconds from now
+    </time>
+  </div>
+</div>
+`;
+
+exports[`renders correctly null event should renders correctly 1`] = `null`;

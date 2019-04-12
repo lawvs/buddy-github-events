@@ -1,0 +1,50 @@
+[
+  {
+    "id": "9494474222",
+    "type": "DeleteEvent",
+    "actor": {
+      "id": 666678,
+      "login": "GITHUB_USERNAME",
+      "display_login": "GITHUB_USERNAME",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/GITHUB_USERNAME",
+      "avatar_url": "https://avatars.githubusercontent.com/u/11111?"
+    },
+    "repo": {
+      "id": 179999,
+      "name": "GITHUB_USERNAME/PROJECT_NAME_2",
+      "url": "https://api.github.com/repos/GITHUB_USERNAME/PROJECT_NAME_2"
+    },
+    "payload": {
+      "ref": "fix",
+      "ref_type": "branch",
+      "pusher_type": "user"
+    },
+    "public": true,
+    "created_at": "2019-01-01T00:00:00Z"
+  },
+  {
+    "id": "9392345111",
+    "type": "DeleteEvent",
+    "actor": {
+      "id": 13311,
+      "login": "GITHUB_USERNAME",
+      "display_login": "GITHUB_USERNAME",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/GITHUB_USERNAME",
+      "avatar_url": "https://avatars.githubusercontent.com/u/11111?"
+    },
+    "repo": {
+      "id": 11222,
+      "name": "GITHUB_USERNAME/PROJECT_NAME_1",
+      "url": "https://api.github.com/repos/GITHUB_USERNAME/PROJECT_NAME_1"
+    },
+    "payload": {
+      "ref": "v1.0.0",
+      "ref_type": "tag",
+      "pusher_type": "user"
+    },
+    "public": true,
+    "created_at": "2019-01-01T00:00:00Z"
+  }
+]
