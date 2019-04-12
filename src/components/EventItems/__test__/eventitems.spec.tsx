@@ -2,6 +2,7 @@ import React from 'react'
 import TestRenderer from 'react-test-renderer'
 
 import EventItems from '../index'
+import DeleteEvent from './fixtures/DeleteEvent.json'
 
 beforeEach(() => {
   // mock react-timeago.TimeAgo Date.now
@@ -18,8 +19,7 @@ describe('renders correctly null event', () => {
 
 describe('renders correctly EventItems', () => {
   it('DeleteEvent should renders correctly', () => {
-    const DeleteEvent = require('./fixtures/DeleteEvent.json')
-    const renderer = TestRenderer.create(<EventItems events={DeleteEvent} />)
+    const renderer = TestRenderer.create(<EventItems events={DeleteEvent as any} />)
     expect(renderer).toMatchSnapshot()
     renderer.unmount()
   })
