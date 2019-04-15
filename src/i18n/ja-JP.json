@@ -4,6 +4,7 @@
   "received event": "受け取った活動",
   "Search": "サーチ",
   "Loading": "ロード中...",
+  "No recent activity": "最近の活動なし",
   "PROJECT_NAME": "Buddy's Github Events",
   "PROJECT_DESCRIPTION": "友達のGitHubアクティビティを見る",
   "Github username": "$t(GitHub) ユーザー名",

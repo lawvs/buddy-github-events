@@ -17,6 +17,14 @@ describe('renders correctly null event', () => {
   })
 })
 
+describe('renders correctly empty event', () => {
+  it('should renders correctly', () => {
+    const renderer = TestRenderer.create(<EventItems events={[]} />)
+    expect(renderer).toMatchSnapshot()
+    renderer.unmount()
+  })
+})
+
 describe('renders correctly EventItems', () => {
   it('DeleteEvent should renders correctly', () => {
     const renderer = TestRenderer.create(<EventItems events={DeleteEvent as any} />)

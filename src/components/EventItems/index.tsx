@@ -1,8 +1,10 @@
 import React, { Fragment } from 'react'
+import { withTranslation, WithTranslation } from 'react-i18next'
 import { Event, parse } from 'parse-github-event'
 import TimeAgo from 'react-timeago'
 
 import { Wrapper, Avatar, Descript } from './styled'
+import Card, { INTENTS } from '../Card'
 
 const GITHUB_DOMAIN = 'https://github.com'
 
@@ -83,8 +85,14 @@ export interface EventItemsProps {
   events?: Event[]
 }
 
-const EventItems = ({ events }: EventItemsProps) =>
-  events ? (
+const EventItems = ({ events, t }: EventItemsProps & WithTranslation) => {
+  if (!events) {
+    return null
+  }
+  if (events.length === 0) {
+    return <Card intent={INTENTS.WARNING}>{t('No recent activity')}</Card>
+  }
+  return (
     <div>
       {events
         .filter((e, index, self) => index === self.findIndex(t => t.id === e.id)) // remove id duplicates
@@ -92,6 +100,7 @@ const EventItems = ({ events }: EventItemsProps) =>
           <EventItem key={event.id} {...event} />
         ))}
     </div>
-  ) : null
+  )
+}
 
-export default EventItems
+export default withTranslation()(EventItems)

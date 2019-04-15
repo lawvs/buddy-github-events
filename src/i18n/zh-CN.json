@@ -4,6 +4,7 @@
   "received event": "接收的事件",
   "Search": "搜索",
   "Loading": "正在加载...",
+  "No recent activity": "没有最近的活动",
   "PROJECT_NAME": "Buddy's Github Events",
   "PROJECT_DESCRIPTION": "偷看大佬们的 GitHub 动态",
   "Github username": "$t(GitHub) 用户名",
