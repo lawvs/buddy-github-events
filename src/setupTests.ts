@@ -24,3 +24,13 @@ function mockConsole() {
 }
 
 mockConsole()
+
+// mock i18n
+// https://react.i18next.com/misc/testing
+jest.mock('react-i18next', () => ({
+  // this mock makes sure any components using the translate HoC receive the t function as a prop
+  withTranslation: () => (Component: any) => {
+    Component.defaultProps = { ...Component.defaultProps, t: (s: any) => s }
+    return Component
+  },
+}))
