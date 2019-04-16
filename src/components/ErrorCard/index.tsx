@@ -1,12 +1,12 @@
 import React from 'react'
 
-import Card, { INTENTS } from '../Card'
+import { CenteredCard, INTENTS } from '../Card'
 
 export interface ErrorCardProps {
   error?: string
 }
 
 const ErrorCard = ({ error }: ErrorCardProps) =>
-  error ? <Card intent={INTENTS.DANGER}>🙁{error}</Card> : null
+  error ? <CenteredCard intent={INTENTS.DANGER}>🙁{error}</CenteredCard> : null
 
 export default ErrorCard

@@ -2,7 +2,7 @@ import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import { WithTranslation, withTranslation } from 'react-i18next'
 
-import Card from '../Card'
+import { CenteredCard } from '../Card'
 
 const flash = keyframes`
   0% { opacity: 1; }
@@ -29,10 +29,10 @@ export interface LoadingProps {
 
 const Loading = ({ loading, t }: LoadingProps & WithTranslation) =>
   loading ? (
-    <Card>
+    <CenteredCard>
       <Spinner />
       <p>{t('Loading')}</p>
-    </Card>
+    </CenteredCard>
   ) : null
 
 export default withTranslation()(Loading)

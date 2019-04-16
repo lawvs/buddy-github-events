@@ -4,7 +4,7 @@ import { Event, parse } from 'parse-github-event'
 import TimeAgo from 'react-timeago'
 
 import { Wrapper, Avatar, Descript } from './styled'
-import Card, { INTENTS } from '../Card'
+import { CenteredCard, INTENTS } from '../Card'
 
 const GITHUB_DOMAIN = 'https://github.com'
 
@@ -90,7 +90,7 @@ const EventItems = ({ events, t }: EventItemsProps & WithTranslation) => {
     return null
   }
   if (events.length === 0) {
-    return <Card intent={INTENTS.WARNING}>{t('No recent activity')}</Card>
+    return <CenteredCard intent={INTENTS.WARNING}>{t('No recent activity')}</CenteredCard>
   }
   return (
     <div>
