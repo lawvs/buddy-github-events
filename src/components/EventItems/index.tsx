@@ -3,8 +3,9 @@ import { withTranslation, WithTranslation } from 'react-i18next'
 import { Event, parse } from 'parse-github-event'
 import TimeAgo from 'react-timeago'
 
-import { Wrapper, Avatar, Descript } from './styled'
+import { ItemWrapper, InfoWrapper, Avatar, Descript } from './styled'
 import { CenteredCard, INTENTS } from '../Card'
+import DetailCard from './DetailCard'
 
 const GITHUB_DOMAIN = 'https://github.com'
 
@@ -71,13 +72,17 @@ const EventItem = (event: Event) => {
   }
 
   return (
-    <Wrapper>
+    <ItemWrapper>
       <a href={actorUrl} target="_blank" rel="noopener noreferrer">
         <Avatar src={avatar_url} width={'32'} height={'32'} alt={`@${login}`} />
       </a>
-      <Descript>{descriptArray}</Descript>
-      <TimeAgo date={new Date(event.created_at)} />
-    </Wrapper>
+      <InfoWrapper>
+        <Descript>
+          {descriptArray} <TimeAgo date={new Date(event.created_at)} />
+        </Descript>
+        <DetailCard event={event} />
+      </InfoWrapper>
+    </ItemWrapper>
   )
 }
 

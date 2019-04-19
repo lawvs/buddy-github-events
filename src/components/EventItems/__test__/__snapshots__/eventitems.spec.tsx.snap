@@ -3,7 +3,7 @@
 exports[`renders correctly EventItems DeleteEvent should renders correctly 1`] = `
 <div>
   <div
-    className="sc-bdVaJa dvjgOn"
+    className="sc-bdVaJa dggWvc"
   >
     <a
       href="https://github.com/GITHUB_USERNAME"
@@ -12,43 +12,48 @@ exports[`renders correctly EventItems DeleteEvent should renders correctly 1`] =
     >
       <img
         alt="@GITHUB_USERNAME"
-        className="sc-bwzfXH hLcALu"
+        className="sc-htpNat grZypd"
         height="32"
         src="https://avatars.githubusercontent.com/u/11111?"
         width="32"
       />
     </a>
-    <p
-      className="sc-htpNat pFQla"
+    <div
+      className="sc-bwzfXH cNNFGz"
     >
-      <a
-        href="https://github.com/GITHUB_USERNAME"
-        rel="noopener noreferrer"
-        target="_blank"
+      <p
+        className="sc-bxivhb gPNtXg"
       >
-        GITHUB_USERNAME
-      </a>
-       
-      deleted branch 
-      fix
-       at 
-      <a
-        href="https://github.com/GITHUB_USERNAME/PROJECT_NAME_2"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        GITHUB_USERNAME/PROJECT_NAME_2
-      </a>
-    </p>
-    <time
-      dateTime="2019-01-01T00:00:00.000Z"
-      title="2019-01-01 00:00"
-    >
-      0 seconds from now
-    </time>
+        <a
+          href="https://github.com/GITHUB_USERNAME"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          GITHUB_USERNAME
+        </a>
+         
+        deleted branch 
+        fix
+         at 
+        <a
+          href="https://github.com/GITHUB_USERNAME/PROJECT_NAME_2"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          GITHUB_USERNAME/PROJECT_NAME_2
+        </a>
+         
+        <time
+          dateTime="2019-01-01T00:00:00.000Z"
+          title="2019-01-01 00:00"
+        >
+          0 seconds from now
+        </time>
+      </p>
+    </div>
   </div>
   <div
-    className="sc-bdVaJa dvjgOn"
+    className="sc-bdVaJa dggWvc"
   >
     <a
       href="https://github.com/GITHUB_USERNAME"
@@ -57,47 +62,52 @@ exports[`renders correctly EventItems DeleteEvent should renders correctly 1`] =
     >
       <img
         alt="@GITHUB_USERNAME"
-        className="sc-bwzfXH hLcALu"
+        className="sc-htpNat grZypd"
         height="32"
         src="https://avatars.githubusercontent.com/u/11111?"
         width="32"
       />
     </a>
-    <p
-      className="sc-htpNat pFQla"
+    <div
+      className="sc-bwzfXH cNNFGz"
     >
-      <a
-        href="https://github.com/GITHUB_USERNAME"
-        rel="noopener noreferrer"
-        target="_blank"
+      <p
+        className="sc-bxivhb gPNtXg"
       >
-        GITHUB_USERNAME
-      </a>
-       
-      deleted tag 
-      v1.0.0
-       at 
-      <a
-        href="https://github.com/GITHUB_USERNAME/PROJECT_NAME_1"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        GITHUB_USERNAME/PROJECT_NAME_1
-      </a>
-    </p>
-    <time
-      dateTime="2019-01-01T00:00:00.000Z"
-      title="2019-01-01 00:00"
-    >
-      0 seconds from now
-    </time>
+        <a
+          href="https://github.com/GITHUB_USERNAME"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          GITHUB_USERNAME
+        </a>
+         
+        deleted tag 
+        v1.0.0
+         at 
+        <a
+          href="https://github.com/GITHUB_USERNAME/PROJECT_NAME_1"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          GITHUB_USERNAME/PROJECT_NAME_1
+        </a>
+         
+        <time
+          dateTime="2019-01-01T00:00:00.000Z"
+          title="2019-01-01 00:00"
+        >
+          0 seconds from now
+        </time>
+      </p>
+    </div>
   </div>
 </div>
 `;
 
 exports[`renders correctly empty event should renders correctly 1`] = `
 <div
-  className="sc-bxivhb sc-ifAKCX fRWHeT"
+  className="sc-ifAKCX sc-EHOje ehJetM"
 >
   No recent activity
 </div>

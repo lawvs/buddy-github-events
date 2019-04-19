@@ -1,11 +1,17 @@
 import styled from 'styled-components'
 
-export const Wrapper = styled.div`
+export const ItemWrapper = styled.div`
   display: flex;
-  align-items: center;
   padding: 8px 0px;
   margin: 8px 16px;
   border-bottom: 1px solid #e1e4e8;
+`
+
+export const InfoWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1 1;
+  margin: 8px;
 
   time {
     font-size: 12px;
@@ -19,8 +25,9 @@ export const Avatar = styled.img`
 `
 
 export const Descript = styled.p`
-  margin: 8px;
   font-size: 16px;
+  margin: unset;
+  margin-bottom: 8px;
 
   a {
     color: #24292e;
