@@ -60,27 +60,3 @@ export const SearchButton = styled.div<SearchButtonProps>`
     background-color: #bfccd6;
   }
 `
-
-interface TagProps {
-  round?: boolean
-}
-
-export const Tag = styled.span<TagProps>`
-  display: inline-flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 2px 6px;
-  white-space: nowrap;
-  cursor: pointer;
-  user-select: none;
-  ${({ round = false }) => `
-    border-radius: ${round ? '30px' : '3px'};
-  `}
-
-  color: #ddd;
-  background-color: #182026;
-  &:hover {
-    color: #182026;
-    background-color: #bfccd6;
-  }
-`

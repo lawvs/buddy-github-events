@@ -3,7 +3,8 @@ import { withTranslation, WithTranslation } from 'react-i18next'
 
 import { GithubEventsType } from '../../api'
 import { GithubUser } from '../../api/types'
-import { InputWrapper, SearchButton, Tag, InputGroupWrapper } from './styles'
+import { Tag } from '../Tag'
+import { InputWrapper, SearchButton, InputGroupWrapper } from './styles'
 
 export interface InputProps {
   username: string
