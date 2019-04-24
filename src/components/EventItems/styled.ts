@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const ItemWrapper = styled.div`
   display: flex;
+  align-items: baseline;
   padding: 8px 0px;
   margin: 8px 16px;
   border-bottom: 1px solid #e1e4e8;
@@ -22,6 +23,7 @@ export const InfoWrapper = styled.div`
 export const Avatar = styled.img`
   border: 1px solid #e1e4e8;
   border-radius: 100%;
+  vertical-align: middle;
 `
 
 export const Descript = styled.p`
