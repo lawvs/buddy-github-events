@@ -1,10 +1,15 @@
 import React from 'react'
 import { Event } from 'parse-github-event'
 import ReactMarkdown from 'react-markdown'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import Card, { INTENTS } from '../Card'
 import { spLayout } from '../Layout'
+import { Tag } from '../Tag'
+
+const monospacedFonts = css`
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
+`
 
 const DetailCardWrapper = styled(Card)`
   overflow: hidden;
@@ -38,7 +43,7 @@ const DetailCardWrapper = styled(Card)`
       max-width: 500px;
     }
     pre {
-      font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
+      ${monospacedFonts}
       background-color: #f6f8fa;
       border-radius: 3px;
       font-size: 85%;
@@ -49,6 +54,16 @@ const DetailCardWrapper = styled(Card)`
     }
   }
 `
+
+const CommitMessage = styled.p`
+  ${monospacedFonts}
+
+  font-size: 14px;
+  margin: unset;
+  margin: 4px;
+`
+
+const GITHUB_URL = 'https://github.com'
 
 const DetailCard = ({ event }: { event: Event }) => {
   // https://developer.github.com/v3/activity/events/types/
@@ -86,6 +101,25 @@ const DetailCard = ({ event }: { event: Event }) => {
           )}
         </DetailCardWrapper>
       )
+    case 'PushEvent':
+      return event.payload.commits.length > 0 ? (
+        <DetailCardWrapper intent={INTENTS.NONE}>
+          {event.payload.commits.map((
+            commit: any, // TODO fix type https://developer.github.com/v3/repos/commits/
+          ) => (
+            <CommitMessage key={commit.sha}>
+              <a
+                href={`${GITHUB_URL}/${event.repo.name}/commit/${commit.sha}`}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <Tag round>{commit.sha.slice(0, 7)}</Tag>
+              </a>
+              {commit.message.split('\n')[0]}
+            </CommitMessage>
+          ))}
+        </DetailCardWrapper>
+      ) : null
     default:
       return null
   }

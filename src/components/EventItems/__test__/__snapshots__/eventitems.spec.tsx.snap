@@ -3,7 +3,7 @@
 exports[`renders correctly EventItems DeleteEvent should renders correctly 1`] = `
 <div>
   <div
-    className="sc-bdVaJa dggWvc"
+    className="sc-bdVaJa gSypMZ"
   >
     <a
       href="https://github.com/GITHUB_USERNAME"
@@ -12,7 +12,7 @@ exports[`renders correctly EventItems DeleteEvent should renders correctly 1`] =
     >
       <img
         alt="@GITHUB_USERNAME"
-        className="sc-htpNat grZypd"
+        className="sc-htpNat kTzFPi"
         height="32"
         src="https://avatars.githubusercontent.com/u/11111?"
         width="32"
@@ -53,7 +53,7 @@ exports[`renders correctly EventItems DeleteEvent should renders correctly 1`] =
     </div>
   </div>
   <div
-    className="sc-bdVaJa dggWvc"
+    className="sc-bdVaJa gSypMZ"
   >
     <a
       href="https://github.com/GITHUB_USERNAME"
@@ -62,7 +62,7 @@ exports[`renders correctly EventItems DeleteEvent should renders correctly 1`] =
     >
       <img
         alt="@GITHUB_USERNAME"
-        className="sc-htpNat grZypd"
+        className="sc-htpNat kTzFPi"
         height="32"
         src="https://avatars.githubusercontent.com/u/11111?"
         width="32"
@@ -107,7 +107,7 @@ exports[`renders correctly EventItems DeleteEvent should renders correctly 1`] =
 
 exports[`renders correctly empty event should renders correctly 1`] = `
 <div
-  className="sc-ifAKCX sc-EHOje ehJetM"
+  className="sc-ifAKCX sc-EHOje bBKYda"
 >
   No recent activity
 </div>
