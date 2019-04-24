@@ -51,6 +51,7 @@ const DetailCardWrapper = styled(Card)`
 `
 
 const DetailCard = ({ event }: { event: Event }) => {
+  // https://developer.github.com/v3/activity/events/types/
   switch (event.type) {
     case 'IssuesEvent':
     case 'IssueCommentEvent':
@@ -65,6 +66,22 @@ const DetailCard = ({ event }: { event: Event }) => {
           {event.payload.issue.body && (
             <details>
               <ReactMarkdown source={event.payload.issue.body} />
+            </details>
+          )}
+        </DetailCardWrapper>
+      )
+    case 'PullRequestEvent':
+      return (
+        <DetailCardWrapper intent={INTENTS.NONE}>
+          <h5>
+            <a href={event.payload.pull_request.html_url} rel="noopener noreferrer" target="_blank">
+              {event.payload.pull_request.title}
+            </a>
+            <span>#{event.payload.pull_request.number}</span>
+          </h5>
+          {event.payload.pull_request.body && (
+            <details>
+              <ReactMarkdown source={event.payload.pull_request.body} />
             </details>
           )}
         </DetailCardWrapper>
