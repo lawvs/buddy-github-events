@@ -28,13 +28,15 @@ const Input = ({
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     changeName(e.currentTarget.value.trim())
   }
+  const isUsernameChange = () =>
+    !profileInfo || profileInfo.login.toLowerCase() !== username.toLowerCase()
   const search = () => {
     if (!username) {
       // TODO tips
       return
     }
     fetchEvent()
-    if (!profileInfo || profileInfo.login !== username) {
+    if (!profileInfo || isUsernameChange()) {
       fetchProfile()
     }
   }
@@ -61,9 +63,8 @@ const Input = ({
           onChange={handleChange}
           onKeyPress={handleKeyPress}
         />
-        {profileInfo &&
-        username === profileInfo.login &&
-        profileInfo.type === 'Organization' ? null : (
+        {/* hidden type switch when current profile is an Organization */}
+        {profileInfo && profileInfo.type === 'Organization' && !isUsernameChange() ? null : (
           <Tag round onClick={handleTagClick}>
             {eventType === GithubEventsType.EVENTS ? t('broadcast event') : t('received event')}
           </Tag>
