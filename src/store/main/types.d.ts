@@ -1,4 +1,4 @@
-import { Event } from 'parse-github-event'
+import { GithubApi } from 'parse-github-event/lib/types'
 
 import {
   FETCH_PROFILE_REQUESTED,
@@ -20,7 +20,7 @@ export interface MainState {
   readonly username: string
   readonly eventType: GithubEventsType
   readonly profileInfo?: GithubUser
-  readonly events?: Event[]
+  readonly events?: GithubApi.GithubEvent[]
 }
 
 // actions

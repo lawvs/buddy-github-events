@@ -1,7 +1,7 @@
 import React from 'react'
-import { Event } from 'parse-github-event'
-import ReactMarkdown from 'react-markdown'
 import styled, { css } from 'styled-components'
+import ReactMarkdown from 'react-markdown'
+import { GithubApi } from 'parse-github-event/lib/types'
 
 import Card, { INTENTS } from '../Card'
 import { spLayout } from '../Layout'
@@ -65,7 +65,7 @@ const CommitMessage = styled.p`
 
 const GITHUB_URL = 'https://github.com'
 
-const DetailCard = ({ event }: { event: Event }) => {
+const DetailCard = ({ event }: { event: GithubApi.GithubEvent }) => {
   // https://developer.github.com/v3/activity/events/types/
   switch (event.type) {
     case 'IssuesEvent':

@@ -1,4 +1,4 @@
-import { Event as GithubEvent } from 'parse-github-event'
+import { GithubApi } from 'parse-github-event/lib/types'
 
 import { GithubUser } from './types'
 
@@ -21,7 +21,7 @@ export enum GithubEventsType {
 export const fetchGithubEventsApi = (
   name: string,
   type: GithubEventsType,
-): Promise<GithubEvent[]> =>
+): Promise<GithubApi.GithubEvent[]> =>
   fetch(
     type === GithubEventsType.EVENTS
       ? `${GITHUB_API}/users/${name}/events`
@@ -30,5 +30,5 @@ export const fetchGithubEventsApi = (
     if (!resp.ok) {
       throw new Error(resp.statusText)
     }
-    return resp.json() as Promise<GithubEvent[]>
+    return resp.json() as Promise<GithubApi.GithubEvent[]>
   })

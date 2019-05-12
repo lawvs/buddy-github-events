@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { withTranslation, WithTranslation } from 'react-i18next'
-import { Event, parse } from 'parse-github-event'
+import { parse } from 'parse-github-event'
+import { GithubApi } from 'parse-github-event/lib/types'
 import TimeAgo from 'react-timeago'
 
 import { ItemWrapper, InfoWrapper, Avatar, Descript } from './styled'
@@ -9,7 +10,7 @@ import DetailCard from './DetailCard'
 
 const GITHUB_DOMAIN = 'https://github.com'
 
-const EventItem = (event: Event) => {
+const EventItem = (event: GithubApi.GithubEvent) => {
   const {
     actor: { login, avatar_url },
   } = event
@@ -87,7 +88,7 @@ const EventItem = (event: Event) => {
 }
 
 export interface EventItemsProps {
-  events?: Event[]
+  events?: any[]
 }
 
 const EventItems = ({ events, t }: EventItemsProps & WithTranslation) => {
