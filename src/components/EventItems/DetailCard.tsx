@@ -6,6 +6,7 @@ import { GithubApi } from 'parse-github-event/lib/types'
 import Card, { INTENTS } from '../Card'
 import { spLayout } from '../Layout'
 import { Tag } from '../Tag'
+import { Commit } from './types'
 
 const monospacedFonts = css`
   font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
@@ -104,9 +105,7 @@ const DetailCard = ({ event }: { event: GithubApi.GithubEvent }) => {
     case 'PushEvent':
       return event.payload.commits.length > 0 ? (
         <DetailCardWrapper intent={INTENTS.NONE}>
-          {event.payload.commits.map((
-            commit: any, // TODO fix type https://developer.github.com/v3/repos/commits/
-          ) => (
+          {(event.payload.commits as Commit[]).map((commit: Commit) => (
             <CommitMessage key={commit.sha}>
               <a
                 href={`${GITHUB_URL}/${event.repo.name}/commit/${commit.sha}`}

@@ -26,9 +26,9 @@ const EventItem = (event: GithubApi.GithubEvent) => {
     return null // TODO: ErrorCompents
   }
 
-  const templateDate: any = eventParsed.data // TODO fix type
-  if (eventParsed.data.hasOwnProperty('repository')) {
-    templateDate['repository'] = (
+  const templateDate: { [x: string]: React.ReactNode } = eventParsed.data
+  if (templateDate.repository) {
+    templateDate.repository = (
       <a
         key={'repo'}
         href={`${GITHUB_DOMAIN}/${templateDate['repository']}`}
@@ -39,15 +39,15 @@ const EventItem = (event: GithubApi.GithubEvent) => {
       </a>
     )
   }
-  if (eventParsed.data.hasOwnProperty('member')) {
-    templateDate['member'] = (
+  if (templateDate.member) {
+    templateDate.member = (
       <a
         key={'member'}
-        href={templateDate['member']['html_url']}
+        href={`${GITHUB_DOMAIN}/${templateDate.member}`}
         target="_blank"
         rel="noopener noreferrer"
       >
-        {templateDate['member']['login']}
+        {templateDate.member}
       </a>
     )
   }
@@ -68,7 +68,7 @@ const EventItem = (event: GithubApi.GithubEvent) => {
   let matchResult
   while ((matchResult = regex.exec(text))) {
     descriptArray.push(text.slice(startIndex, matchResult.index))
-    descriptArray.push((eventParsed.data as any)[matchResult[1]]) // TODO: fix type
+    descriptArray.push(eventParsed.data[matchResult[1]])
     startIndex = regex.lastIndex
   }
 
@@ -88,7 +88,7 @@ const EventItem = (event: GithubApi.GithubEvent) => {
 }
 
 export interface EventItemsProps {
-  events?: any[]
+  events?: GithubApi.GithubEvent[]
 }
 
 const EventItems = ({ events, t }: EventItemsProps & WithTranslation) => {

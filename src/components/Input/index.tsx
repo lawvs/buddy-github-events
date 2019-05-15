@@ -1,15 +1,15 @@
 import React from 'react'
 import { withTranslation, WithTranslation } from 'react-i18next'
+import { GithubApi } from 'parse-github-event/lib/types'
 
 import { GithubEventsType } from '../../api'
-import { GithubUser } from '../../api/types'
 import { Tag } from '../Tag'
 import { InputWrapper, SearchButton, InputGroupWrapper } from './styles'
 
 export interface InputProps {
   username: string
   eventType: GithubEventsType
-  profileInfo?: GithubUser
+  profileInfo?: GithubApi.User
   changeName(name: string): void
   changeEventType(type: GithubEventsType): void
   fetchProfile(): void

@@ -1,15 +1,13 @@
 import { GithubApi } from 'parse-github-event/lib/types'
 
-import { GithubUser } from './types'
-
 const GITHUB_API = 'https://api.github.com'
 
-export const fetchGithubProfileApi = (name: string): Promise<GithubUser> =>
+export const fetchGithubProfileApi = (name: string): Promise<GithubApi.User> =>
   fetch(`${GITHUB_API}/users/${name}`).then(resp => {
     if (!resp.ok) {
       throw new Error(resp.statusText)
     }
-    return resp.json() as Promise<GithubUser>
+    return resp.json() as Promise<GithubApi.User>
   })
 
 export enum GithubEventsType {

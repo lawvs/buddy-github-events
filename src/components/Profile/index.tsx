@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled, { keyframes } from 'styled-components'
+import { GithubApi } from 'parse-github-event/lib/types'
 
-import { GithubUser } from '../../api/types'
 import { spLayout } from '../Layout'
 
 const fadein = keyframes`
@@ -46,7 +46,7 @@ const ProfileWrapper = styled.aside`
   }
 `
 
-const Profile = ({ profileInfo }: { profileInfo?: GithubUser }) => {
+const Profile = ({ profileInfo }: { profileInfo?: GithubApi.User }) => {
   const [loadedName, setLoadedName] = useState<string>()
   if (!profileInfo) {
     return <div />

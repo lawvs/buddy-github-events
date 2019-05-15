@@ -10,7 +10,6 @@ import {
   CHANGE_NAME,
   CHANGE_EVENT_TYPE,
 } from './constants'
-import { GithubUser } from '../../api/types'
 import { GithubEventsType } from '../../api'
 
 // main state
@@ -19,7 +18,7 @@ export interface MainState {
   readonly loading: boolean
   readonly username: string
   readonly eventType: GithubEventsType
-  readonly profileInfo?: GithubUser
+  readonly profileInfo?: GithubApi.User
   readonly events?: GithubApi.GithubEvent[]
 }
 
