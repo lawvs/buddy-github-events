@@ -1,6 +1,6 @@
 {
   "name": "buddy-github-events",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Check out your buddy's github events",
   "scripts": {
     "start": "npm run dev",
