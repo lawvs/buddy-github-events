@@ -87,6 +87,7 @@ const DetailCard = ({ event }: { event: GithubApi.GithubEvent }) => {
         </DetailCardWrapper>
       )
     case 'PullRequestEvent':
+    case 'PullRequestReviewCommentEvent':
       return (
         <DetailCardWrapper intent={INTENTS.NONE}>
           <h5>
