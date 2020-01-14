@@ -72,11 +72,12 @@ export const fetchMoreEvent = () => async (
   } = getState()
 
   if (!username) {
-    dispatch({ type: FETCH_EVENTS_FAILURE, error: 'Username can not be empty' })
+    dispatch({ type: FETCH_MORE_EVENTS_FAILURE, error: 'Username can not be empty' })
     return
   }
   if (isTheLastPage) {
-    dispatch({ type: FETCH_EVENTS_FAILURE, error: 'No more content' })
+    dispatch({ type: FETCH_MORE_EVENTS_FAILURE, error: 'No more content' })
+    return
   }
 
   dispatch({ type: FETCH_MORE_EVENTS_REQUESTED })

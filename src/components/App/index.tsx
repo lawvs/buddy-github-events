@@ -14,9 +14,9 @@ const App = () => (
     <Main>
       <Profile />
       <Center>
+        <EventItems />
         <ErrorCard />
         <Loading />
-        <EventItems />
       </Center>
       <PlaceHolder />
     </Main>

@@ -11,7 +11,7 @@ beforeEach(() => {
 
 describe('renders correctly null event', () => {
   it('should renders correctly', () => {
-    const renderer = TestRenderer.create(<EventItems />)
+    const renderer = TestRenderer.create(<EventItems showMore={() => undefined} />)
     expect(renderer).toMatchSnapshot()
     renderer.unmount()
   })
@@ -19,7 +19,7 @@ describe('renders correctly null event', () => {
 
 describe('renders correctly empty event', () => {
   it('should renders correctly', () => {
-    const renderer = TestRenderer.create(<EventItems events={[]} />)
+    const renderer = TestRenderer.create(<EventItems events={[]} showMore={() => undefined} />)
     expect(renderer).toMatchSnapshot()
     renderer.unmount()
   })
@@ -27,7 +27,9 @@ describe('renders correctly empty event', () => {
 
 describe('renders correctly EventItems', () => {
   it('DeleteEvent should renders correctly', () => {
-    const renderer = TestRenderer.create(<EventItems events={DeleteEvent as any} />)
+    const renderer = TestRenderer.create(
+      <EventItems events={DeleteEvent as any} showMore={() => undefined} />,
+    )
     expect(renderer).toMatchSnapshot()
     renderer.unmount()
   })

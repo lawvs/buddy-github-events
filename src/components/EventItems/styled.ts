@@ -41,3 +41,5 @@ export const Descript = styled.p`
     color: #0366d6;
   }
 `
+
+export const Sentinel = styled.div``
