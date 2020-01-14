@@ -68,8 +68,12 @@ export const fetchMoreEvent = () => async (
   getState: () => GlobalState,
 ) => {
   const {
-    mainState: { username, eventType, currentPage, isTheLastPage },
+    mainState: { username, eventType, currentPage, isTheLastPage, loading },
   } = getState()
+
+  if (loading) {
+    return
+  }
 
   if (!username) {
     dispatch({ type: FETCH_MORE_EVENTS_FAILURE, error: 'Username can not be empty' })
