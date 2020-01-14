@@ -7,6 +7,9 @@ import {
   FETCH_EVENTS_FAILURE,
   CHANGE_NAME,
   CHANGE_EVENT_TYPE,
+  FETCH_MORE_EVENTS_FAILURE,
+  FETCH_MORE_EVENTS_REQUESTED,
+  FETCH_MORE_EVENTS_SUCCESS,
 } from './constants'
 import { MainActionTypes, MainState } from './types'
 import { GithubEventsType } from '../../api'
@@ -14,6 +17,8 @@ import { GithubEventsType } from '../../api'
 const initState: MainState = {
   loading: false,
   username: '',
+  currentPage: 1,
+  isTheLastPage: false,
   eventType: GithubEventsType.EVENTS,
 }
 
@@ -42,6 +47,8 @@ export default (state = initState, action: MainActionTypes): MainState => {
         ...state,
         loading: true,
         events: undefined,
+        currentPage: 1,
+        isTheLastPage: false,
         error: undefined,
       }
     }
@@ -63,6 +70,36 @@ export default (state = initState, action: MainActionTypes): MainState => {
         loading: false,
       }
     }
+
+    // fetch more events
+    case FETCH_MORE_EVENTS_REQUESTED: {
+      return {
+        ...state,
+        loading: true,
+        error: undefined,
+      }
+    }
+    case FETCH_MORE_EVENTS_SUCCESS: {
+      const {
+        payload: { events, page, isTheLastPage },
+      } = action
+      return {
+        ...state,
+        loading: false,
+        isTheLastPage,
+        currentPage: page,
+        events: [...(state.events ?? []), ...events],
+      }
+    }
+    case FETCH_MORE_EVENTS_FAILURE: {
+      const { error } = action
+      return {
+        ...state,
+        error,
+        loading: false,
+      }
+    }
+
     case CHANGE_NAME: {
       const {
         payload: { username },
