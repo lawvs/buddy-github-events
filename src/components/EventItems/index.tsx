@@ -95,17 +95,18 @@ export interface EventItemsProps {
 const EventItems = ({ events, showMore, t }: EventItemsProps & WithTranslation) => {
   const observer = useRef<IntersectionObserver | null>(null)
   const sentinelRef = useCallback(node => {
-    if (node !== null) {
-      observer.current?.observe(node)
+    if (node === null) {
+      return
     }
-  }, [])
-
-  useEffect(() => {
     observer.current = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         showMore()
       }
     })
+    observer.current.observe(node)
+  }, [])
+
+  useEffect(() => {
     return () => observer.current?.disconnect()
   }, [])
 
