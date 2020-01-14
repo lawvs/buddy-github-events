@@ -8,7 +8,7 @@ import { GlobalState, AppThunkMiddleware } from './types'
 
 const DEBUG = process.env.NODE_ENV === 'development'
 
-const configureStore = (preloadedState: GlobalState | {} = {}) => {
+const configureStore = (preloadedState: GlobalState | undefined = undefined) => {
   // configure middlewares
   const middlewares = reduxThunk as AppThunkMiddleware
   // compose enhancers
