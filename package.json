@@ -6,8 +6,8 @@
     "start": "npm run dev",
     "dev": "webpack-dev-server --config scripts/webpack.dev.conf.js --mode=development --colors --watch --hot",
     "build": "webpack --config scripts/webpack.prod.conf.js --mode=production --colors",
-    "lint": "eslint --ext .ts,.tsx,.json .",
-    "lint:fix": "eslint --ext .ts,.tsx,.json --fix .",
+    "lint": "eslint --ext .ts,.tsx .",
+    "lint:fix": "eslint --ext .ts,.tsx --fix .",
     "clean": "rm -rf dist",
     "test": "jest"
   },

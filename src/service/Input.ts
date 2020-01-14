@@ -20,7 +20,4 @@ const mapDispatchToProps = (dispatch: AppThunkDispatch): ActionProperties<InputP
   fetchEvent: () => dispatch(fetchEvent()),
 })
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Input)
+export default connect(mapStateToProps, mapDispatchToProps)(Input)
