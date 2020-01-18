@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect, useRef, useCallback } from 'react'
 import { withTranslation, WithTranslation } from 'react-i18next'
 import { parse } from 'parse-github-event'
 import { GithubApi } from 'parse-github-event/lib/types'
 import TimeAgo from 'react-timeago'
 
-import { ItemWrapper, InfoWrapper, Avatar, Descript } from './styled'
+import { ItemWrapper, InfoWrapper, Avatar, Descript, Sentinel } from './styled'
 import { CenteredCard, INTENTS } from '../Card'
 import DetailCard from './DetailCard'
 
@@ -89,9 +89,27 @@ const EventItem = (event: GithubApi.GithubEvent) => {
 
 export interface EventItemsProps {
   events?: GithubApi.GithubEvent[]
+  showMore(): void
 }
 
-const EventItems = ({ events, t }: EventItemsProps & WithTranslation) => {
+const EventItems = ({ events, showMore, t }: EventItemsProps & WithTranslation) => {
+  const observer = useRef<IntersectionObserver | null>(null)
+  const sentinelRef = useCallback(node => {
+    if (node === null) {
+      return
+    }
+    observer.current = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        showMore()
+      }
+    })
+    observer.current.observe(node)
+  }, [])
+
+  useEffect(() => {
+    return () => observer.current?.disconnect()
+  }, [])
+
   if (!events) {
     return null
   }
@@ -105,6 +123,7 @@ const EventItems = ({ events, t }: EventItemsProps & WithTranslation) => {
         .map(event => (
           <EventItem key={event.id} {...event} />
         ))}
+      <Sentinel ref={sentinelRef} />
     </div>
   )
 }

@@ -7,6 +7,9 @@ import {
   FETCH_EVENTS_REQUESTED,
   FETCH_EVENTS_SUCCESS,
   FETCH_EVENTS_FAILURE,
+  FETCH_MORE_EVENTS_REQUESTED,
+  FETCH_MORE_EVENTS_SUCCESS,
+  FETCH_MORE_EVENTS_FAILURE,
   CHANGE_NAME,
   CHANGE_EVENT_TYPE,
 } from './constants'
@@ -17,12 +20,15 @@ export interface MainState {
   readonly error?: string
   readonly loading: boolean
   readonly username: string
+  readonly currentPage: number
+  readonly isTheLastPage: boolean
   readonly eventType: GithubEventsType
   readonly profileInfo?: GithubApi.User
   readonly events?: GithubApi.GithubEvent[]
 }
 
 // actions
+
 export interface FetchProfileRequestedAction {
   type: typeof FETCH_PROFILE_REQUESTED
 }
@@ -44,6 +50,8 @@ export type FetchProfileActionTypes =
   | FetchProfileSuccessAction
   | FetchProfileFailureAction
 
+// fetch the first page events
+
 export interface FetchEventsRequestedAction {
   type: typeof FETCH_EVENTS_REQUESTED
 }
@@ -51,7 +59,7 @@ export interface FetchEventsRequestedAction {
 export interface FetchEventsSuccessAction {
   type: typeof FETCH_EVENTS_SUCCESS
   payload: {
-    events: MainState['events']
+    events: NonNullable<MainState['events']>
   }
 }
 
@@ -64,6 +72,31 @@ export type FetchEventsActionTypes =
   | FetchEventsRequestedAction
   | FetchEventsSuccessAction
   | FetchEventsFailureAction
+
+// fetch more events
+
+export interface FetchMoreEventsRequestedAction {
+  type: typeof FETCH_MORE_EVENTS_REQUESTED
+}
+
+export interface FetchMoreEventsSuccessAction {
+  type: typeof FETCH_MORE_EVENTS_SUCCESS
+  payload: {
+    events: NonNullable<MainState['events']>
+    isTheLastPage: boolean
+    page: number
+  }
+}
+
+export interface FetchMoreEventsFailureAction {
+  type: typeof FETCH_MORE_EVENTS_FAILURE
+  error: MainState['error']
+}
+
+export type FetchMoreEventsActionTypes =
+  | FetchMoreEventsRequestedAction
+  | FetchMoreEventsSuccessAction
+  | FetchMoreEventsFailureAction
 
 export interface ChangeNameType {
   type: typeof CHANGE_NAME
@@ -82,5 +115,6 @@ export interface ChangeEventTypeType {
 export type MainActionTypes =
   | FetchProfileActionTypes
   | FetchEventsActionTypes
+  | FetchMoreEventsActionTypes
   | ChangeNameType
   | ChangeEventTypeType
