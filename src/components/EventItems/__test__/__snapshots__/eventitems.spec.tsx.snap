@@ -102,12 +102,15 @@ exports[`renders correctly EventItems DeleteEvent should renders correctly 1`] =
       </p>
     </div>
   </div>
+  <div
+    className="sc-AykKG fHxMdK"
+  />
 </div>
 `;
 
 exports[`renders correctly empty event should renders correctly 1`] = `
 <div
-  className="sc-AykKG sc-AykKH kNiDti"
+  className="sc-AykKH sc-AykKI gpRLA-D"
 >
   No recent activity
 </div>
