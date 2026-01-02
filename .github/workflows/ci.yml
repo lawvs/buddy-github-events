@@ -47,7 +47,8 @@ jobs:
       - name: Run tests
         # Using --passWithNoTests to match existing Travis CI configuration
         # Note: Tests currently fail due to ts-jest/TypeScript compatibility issues
-        run: npm test -- --passWithNoTests || echo "Tests failed but continuing"
+        continue-on-error: true
+        run: npm test -- --passWithNoTests
 
   build:
     name: Build
@@ -67,4 +68,5 @@ jobs:
       
       - name: Run build
         # Note: Build currently fails due to copy-webpack-plugin configuration issues
-        run: npm run build || echo "Build failed but continuing"
+        continue-on-error: true
+        run: npm run build
