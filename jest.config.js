@@ -6,4 +6,9 @@ module.exports = {
   testMatch: ['**/__tests__/**/*.{ts,tsx}', '**/?(*.)+(spec|test).{ts,tsx}'],
   setupFilesAfterEnv: ['./src/setupTests.ts'],
   collectCoverageFrom: ['./src/**/*.{ts,tsx}'],
+  globals: {
+    'ts-jest': {
+      isolatedModules: true,
+    },
+  },
 }

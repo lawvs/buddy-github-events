@@ -31,7 +31,6 @@ jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
-    continue-on-error: true
     steps:
       - uses: actions/checkout@v4
       
@@ -45,15 +44,11 @@ jobs:
         run: npm install
       
       - name: Run tests
-        # Using --passWithNoTests to match existing Travis CI configuration
-        # Note: Tests currently fail due to ts-jest/TypeScript compatibility issues
-        continue-on-error: true
         run: npm test -- --passWithNoTests
 
   build:
     name: Build
     runs-on: ubuntu-latest
-    continue-on-error: true
     steps:
       - uses: actions/checkout@v4
       
@@ -67,6 +62,4 @@ jobs:
         run: npm install
       
       - name: Run build
-        # Note: Build currently fails due to copy-webpack-plugin configuration issues
-        continue-on-error: true
         run: npm run build
