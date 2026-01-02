@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [ main, master ]
 
+permissions:
+  contents: read
+
 jobs:
   lint:
     name: Lint
@@ -41,6 +44,7 @@ jobs:
         run: npm install --legacy-peer-deps
       
       - name: Run tests
+        # Using --passWithNoTests to match existing Travis CI configuration
         run: npm test -- --passWithNoTests
 
   build:
